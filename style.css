@@ -1,0 +1,983 @@
+/* ========================================
+   MODERN SCHOOL FEE RECEIPT PORTAL
+   Professional Premium Design
+   ======================================== */
+
+/* ========== GLOBAL RESET & IMPORTS ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Premium School Color Palette */
+    --primary-navy: #1e3a8a;
+    --primary-royal: #2563eb;
+    --primary-light: #3b82f6;
+    --accent-teal: #0d9488;
+    --accent-gold: #f59e0b;
+    
+    /* Neutral Colors */
+    --white: #ffffff;
+    --gray-50: #f9fafb;
+    --gray-100: #f3f4f6;
+    --gray-200: #e5e7eb;
+    --gray-300: #d1d5db;
+    --gray-400: #9ca3af;
+    --gray-500: #6b7280;
+    --gray-600: #4b5563;
+    --gray-700: #374151;
+    --gray-800: #1f2937;
+    --gray-900: #111827;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+    --gradient-success: linear-gradient(135deg, #059669 0%, #10b981 100%);
+    --gradient-warning: linear-gradient(135deg, #d97706 0%, #f59e0b 100%);
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    
+    /* Border Radius */
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --radius-xl: 20px;
+}
+
+body {
+    font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #e0e7ff 0%, #f0f9ff 100%);
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--gray-800);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background: var(--white);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-xl);
+    overflow: hidden;
+}
+
+/* ========== SCHOOL HEADER (ABSOLUTE TOP) ========== */
+.school-header {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 20px 40px;
+    border-bottom: 4px solid var(--accent-gold);
+}
+
+.school-header-content {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 25px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.school-logo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.school-logo-main {
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    background: var(--white);
+    padding: 6px;
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-lg);
+}
+
+.school-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.school-name {
+    font-size: 2em;
+    font-weight: 700;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+}
+
+.school-address {
+    font-size: 0.95em;
+    opacity: 0.95;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.school-contact-info {
+    display: flex;
+    gap: 20px;
+    margin-top: 6px;
+    flex-wrap: wrap;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 5px 12px;
+    border-radius: var(--radius-sm);
+    backdrop-filter: blur(10px);
+}
+
+.contact-item svg {
+    flex-shrink: 0;
+}
+
+.inline-input {
+    background: transparent;
+    border: none;
+    color: var(--white);
+    font-size: 0.9em;
+    font-family: inherit;
+    outline: none;
+    width: 180px;
+}
+
+.inline-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* ========== FORM SECTION ========== */
+.form-section {
+    padding: 30px 40px;
+    background: var(--gray-50);
+}
+
+/* ========== FORM CARDS ========== */
+.form-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    margin-bottom: 25px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+    background: var(--gradient-primary);
+    color: var(--white);
+    padding: 18px 25px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.card-header h2 {
+    font-size: 1.25em;
+    font-weight: 600;
+    margin: 0;
+}
+
+.card-header svg {
+    flex-shrink: 0;
+}
+
+.card-body {
+    padding: 25px;
+}
+
+/* ========== FORM ELEMENTS ========== */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: var(--gray-700);
+    font-size: 0.9em;
+}
+
+.required {
+    color: #ef4444;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 16px;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-md);
+    font-size: 0.95em;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: var(--white);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--primary-royal);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.form-group input:read-only {
+    background: var(--gray-100);
+    cursor: not-allowed;
+}
+
+.help-text {
+    font-size: 0.8em;
+    color: var(--gray-500);
+    margin-top: 4px;
+}
+
+/* ========== PHOTO UPLOAD ========== */
+.photo-section {
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 2px solid var(--gray-100);
+}
+
+.photo-section > label {
+    font-weight: 500;
+    color: var(--gray-700);
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 12px;
+}
+
+.photo-upload-area {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.photo-preview {
+    width: 140px;
+    height: 160px;
+    border: 3px dashed var(--gray-300);
+    border-radius: var(--radius-md);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    overflow: hidden;
+    background: var(--gray-50);
+    transition: all 0.3s ease;
+}
+
+.photo-preview:hover {
+    border-color: var(--primary-royal);
+    background: var(--gray-100);
+}
+
+.photo-preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.photo-preview svg {
+    color: var(--gray-400);
+}
+
+.photo-text {
+    color: var(--gray-500);
+    font-size: 0.85em;
+    text-align: center;
+}
+
+.btn-upload {
+    background: var(--gradient-primary);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    font-size: 0.95em;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-upload:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ========== FEE TABLE ========== */
+.table-responsive {
+    overflow-x: auto;
+}
+
+.fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+}
+
+.fee-table thead {
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.fee-table th {
+    padding: 14px 16px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 0.9em;
+    letter-spacing: 0.3px;
+}
+
+.fee-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--gray-200);
+}
+
+.fee-table tr:hover {
+    background: var(--gray-50);
+}
+
+.fee-table input,
+.fee-table select {
+    width: 100%;
+    padding: 10px 12px;
+    border: 2px solid var(--gray-200);
+    border-radius: var(--radius-sm);
+    font-size: 0.9em;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: var(--white);
+}
+
+.fee-table input:focus,
+.fee-table select:focus {
+    outline: none;
+    border-color: var(--primary-royal);
+    box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.1);
+    background: var(--white);
+}
+
+.btn-remove {
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    color: var(--white);
+    border: none;
+    padding: 8px 16px;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    font-size: 0.85em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.btn-remove:hover {
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+}
+
+.btn-add-row {
+    background: var(--accent-teal);
+    color: var(--white);
+    border: none;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 0.95em;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: inherit;
+}
+
+.btn-add-row:hover {
+    background: #0f766e;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* ========== ACTION BUTTONS ========== */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    padding: 15px 0 25px 0;
+    flex-wrap: wrap;
+}
+
+.btn-generate,
+.btn-print,
+.btn-new {
+    padding: 14px 32px;
+    font-size: 1em;
+    font-weight: 600;
+    border: none;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: inherit;
+    letter-spacing: 0.3px;
+}
+
+.btn-generate {
+    background: var(--gradient-primary);
+    color: var(--white);
+}
+
+.btn-generate:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-print {
+    background: var(--gradient-success);
+    color: var(--white);
+}
+
+.btn-print:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn-new {
+    background: var(--gradient-warning);
+    color: var(--white);
+}
+
+.btn-new:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Export to Excel Button */
+.btn-export {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+    color: var(--white);
+    border: none;
+    padding: 14px 24px;
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(17, 153, 142, 0.3);
+    font-family: inherit;
+}
+
+.btn-export:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(17, 153, 142, 0.4);
+}
+
+.btn-export:active {
+    transform: translateY(0);
+}
+
+.btn-export svg {
+    flex-shrink: 0;
+}
+
+/* ========== RECEIPT PREVIEW ========== */
+.receipt-preview {
+    display: none;
+    max-width: 900px;
+    margin: 40px auto;
+    background: var(--white);
+    padding: 25px;
+    border: 3px solid var(--gray-800);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-xl);
+}
+
+.receipt-preview.active {
+    display: block;
+    animation: fadeIn 0.5s ease;
+}
+
+.receipt-header {
+    text-align: center;
+    border-bottom: 3px double var(--gray-800);
+    padding-bottom: 12px;
+    margin-bottom: 12px;
+}
+
+.receipt-logo {
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    margin-bottom: 8px;
+}
+
+.receipt-school-name {
+    font-size: 1.6em;
+    font-weight: 700;
+    color: var(--primary-navy);
+    margin-bottom: 5px;
+}
+
+.receipt-school-address {
+    color: var(--gray-600);
+    font-size: 0.85em;
+    margin-bottom: 3px;
+}
+
+.receipt-school-contact {
+    color: var(--gray-600);
+    font-size: 0.8em;
+    margin-bottom: 6px;
+}
+
+.receipt-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-royal);
+    margin-top: 8px;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-underline-offset: 4px;
+}
+
+.receipt-meta {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 12px;
+    padding: 10px;
+    background: var(--gray-50);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--gray-200);
+    font-size: 0.9em;
+}
+
+.receipt-student-section {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 15px;
+    margin-bottom: 12px;
+    padding: 12px;
+    border: 2px solid var(--gray-300);
+    border-radius: var(--radius-sm);
+    background: var(--gray-50);
+}
+
+.receipt-student-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6px;
+}
+
+.detail-row {
+    display: flex;
+    padding: 3px 0;
+}
+
+.detail-label {
+    font-weight: 600;
+    color: var(--gray-700);
+    min-width: 140px;
+    font-size: 0.85em;
+}
+
+.detail-value {
+    color: var(--gray-900);
+    font-size: 0.85em;
+}
+
+.receipt-student-photo {
+    width: 120px;
+    height: 140px;
+    border: 2px solid var(--gray-800);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: var(--white);
+}
+
+.receipt-student-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.receipt-fee-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.receipt-fee-table th,
+.receipt-fee-table td {
+    border: 1px solid var(--gray-800);
+    padding: 8px 10px;
+    text-align: left;
+}
+
+.receipt-fee-table th {
+    background: var(--gray-100);
+    font-weight: 600;
+    color: var(--gray-800);
+    font-size: 0.85em;
+}
+
+.receipt-fee-table .total-row {
+    font-weight: 700;
+    background: var(--gray-50);
+    font-size: 1em;
+}
+
+.amount-in-words {
+    font-style: italic;
+    color: var(--gray-700);
+    padding: 8px 10px;
+    background: #fef3c7;
+    border-left: 4px solid var(--accent-gold);
+    border-radius: var(--radius-sm);
+    margin-bottom: 10px;
+    font-size: 0.85em;
+}
+
+.receipt-payment-info {
+    margin-bottom: 12px;
+    padding: 10px;
+    background: var(--gray-50);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--gray-200);
+    font-size: 0.9em;
+}
+
+.receipt-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 2px solid var(--gray-300);
+}
+
+.signature-box {
+    text-align: center;
+}
+
+.signature-line {
+    border-top: 2px solid var(--gray-800);
+    margin-top: 40px;
+    padding-top: 5px;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: var(--gray-700);
+}
+
+.stamp-box {
+    border: 2px dashed var(--gray-400);
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--gray-500);
+    margin-bottom: 5px;
+    font-size: 0.8em;
+    border-radius: var(--radius-sm);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== PRINT STYLES ========== */
+@media print {
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    body {
+        background: var(--white);
+        padding: 0;
+        margin: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .school-header,
+    .form-section,
+    .action-buttons {
+        display: none !important;
+    }
+
+    .receipt-preview {
+        display: block !important;
+        border: 2px solid var(--gray-800);
+        box-shadow: none;
+        margin: 0;
+        padding: 15px;
+        page-break-inside: avoid;
+    }
+
+    .receipt-header {
+        padding-bottom: 8px;
+        margin-bottom: 8px;
+    }
+
+    .receipt-logo {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 5px;
+    }
+
+    .receipt-school-name {
+        font-size: 1.4em;
+        margin-bottom: 3px;
+    }
+
+    .receipt-school-address {
+        font-size: 0.8em;
+        margin-bottom: 2px;
+    }
+
+    .receipt-school-contact {
+        font-size: 0.75em;
+        margin-bottom: 4px;
+    }
+
+    .receipt-title {
+        font-size: 1.3em;
+        margin-top: 5px;
+    }
+
+    .receipt-meta {
+        padding: 8px;
+        margin-bottom: 10px;
+        font-size: 0.85em;
+    }
+
+    .receipt-student-section {
+        padding: 10px;
+        margin-bottom: 10px;
+        gap: 12px;
+    }
+
+    .receipt-student-details {
+        gap: 4px;
+    }
+
+    .detail-row {
+        padding: 2px 0;
+    }
+
+    .detail-label,
+    .detail-value {
+        font-size: 0.8em;
+    }
+
+    .receipt-student-photo {
+        width: 100px;
+        height: 120px;
+    }
+
+    .receipt-fee-table {
+        margin-bottom: 8px;
+    }
+
+    .receipt-fee-table th,
+    .receipt-fee-table td {
+        padding: 6px 8px;
+        font-size: 0.8em;
+    }
+
+    .amount-in-words {
+        padding: 6px 8px;
+        margin-bottom: 8px;
+        font-size: 0.8em;
+    }
+
+    .receipt-payment-info {
+        padding: 8px;
+        margin-bottom: 10px;
+        font-size: 0.85em;
+    }
+
+    .receipt-footer {
+        margin-top: 15px;
+        padding-top: 10px;
+        gap: 12px;
+    }
+
+    .signature-line {
+        margin-top: 35px;
+        padding-top: 4px;
+        font-size: 0.75em;
+    }
+
+    .stamp-box {
+        height: 50px;
+        font-size: 0.75em;
+        margin-bottom: 3px;
+    }
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 1024px) {
+    .container {
+        margin: 10px;
+    }
+
+    .form-section {
+        padding: 30px 20px;
+    }
+
+    .card-body {
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .school-header {
+        padding: 25px 20px;
+    }
+
+    .school-header-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 20px;
+    }
+
+    .school-logo-main {
+        margin: 0 auto;
+    }
+
+    .school-contact-info {
+        justify-content: center;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .photo-upload-area {
+        flex-direction: column;
+    }
+
+    .receipt-student-section {
+        grid-template-columns: 1fr;
+    }
+
+    .receipt-student-details {
+        grid-template-columns: 1fr;
+    }
+
+    .receipt-footer {
+        grid-template-columns: 1fr;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn-generate,
+    .btn-print,
+    .btn-new {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .receipt-meta {
+        grid-template-columns: 1fr;
+    }
+
+    .receipt-preview {
+        padding: 20px;
+    }
+
+    .school-name {
+        font-size: 1.5em;
+    }
+}
+
+@media (max-width: 480px) {
+    .school-logo-main {
+        width: 80px;
+        height: 80px;
+    }
+
+    .school-name {
+        font-size: 1.3em;
+    }
+
+    .card-header h2 {
+        font-size: 1.1em;
+    }
+
+    .receipt-school-name {
+        font-size: 1.5em;
+    }
+
+    .receipt-title {
+        font-size: 1.4em;
+    }
+}
+
+/* ========== SMOOTH TRANSITIONS ========== */
+* {
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+button,
+input,
+select {
+    transition: all 0.3s ease;
+}
